@@ -1,11 +1,13 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { multiClientMiddleware } from 'redux-axios-middleware';
-import { apiClients, apiMiddlewareConfig } from 'src/middleware';
+import { apiClients, apiMiddlewareConfig } from 'middleware';
+import thunk from 'redux-thunk';
 import rootReducer from 'redux/reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const initialState = {};
-const middleware = [];
+const middleware = [thunk];
+let nextReducer = null;
 
 const configureStore = () => {
   if (process.env.NODE_ENV === 'production') {
@@ -17,6 +19,13 @@ const configureStore = () => {
         multiClientMiddleware(apiClients, apiMiddlewareConfig)
       )
     );
+
+    if (module.hot) {
+      module.hot.accept('redux/reducers', () => {
+        nextReducer = rootReducer;
+        store.replaceReducer(nextReducer);
+      });
+    }
 
     return store;
   }
@@ -31,6 +40,13 @@ const configureStore = () => {
       )
     )
   );
+
+  if (module.hot) {
+    module.hot.accept('redux/reducers', () => {
+      nextReducer = rootReducer;
+      store.replaceReducer(nextReducer);
+    });
+  }
 
   return store;
 };

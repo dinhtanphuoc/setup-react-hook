@@ -1,5 +1,5 @@
 import { SET_FILTER } from 'redux/actionTypes';
-import { VISIBILITY_FILTERS } from 'constants.js';
+import { VISIBILITY_FILTERS } from 'common/constants';
 
 const initialState = VISIBILITY_FILTERS.ALL;
 
