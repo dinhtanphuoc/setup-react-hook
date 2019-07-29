@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import store from 'redux/store';
-import TodoApp from 'components/pages/TodoApp';
+import configureStore from 'redux/store';
 import * as serviceWorker from 'serviceWorker';
+import { Provider } from 'react-redux';
+import { createBrowserHistory } from 'history';
+import { syncHistoryWithStore } from 'react-router-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { Routes, RenderRoutes } from './routes';
+
+const store = configureStore();
+const browserHistory = createBrowserHistory();
+const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
   <Provider store={store}>
-    <TodoApp />
+    <BrowserRouter>
+      <Route history={history}>
+        <RenderRoutes routes={Routes} />
+      </Route>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );

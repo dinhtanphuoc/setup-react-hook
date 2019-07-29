@@ -1,8 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 import { connect } from 'react-redux';
-import { setFilter } from 'redux/actions';
-import { VISIBILITY_FILTERS } from 'constants.js';
+import { setFilter } from 'api/demo';
+import { VISIBILITY_FILTERS } from 'common/constants';
 
 const VisibilityFilters = ({ activeFilter, setFilter }) => {
   return (

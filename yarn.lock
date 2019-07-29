@@ -8857,6 +8857,11 @@ react-router-dom@^5.0.1:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
+react-router-redux@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/react-router-redux/-/react-router-redux-4.0.8.tgz#227403596b5151e182377dab835b5d45f0f8054e"
+  integrity sha1-InQDWWtRUeGCN32rg1tdRfD4BU4=
+
 react-router@5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-5.0.1.tgz#04ee77df1d1ab6cb8939f9f01ad5702dbadb8b0f"
@@ -9076,6 +9081,11 @@ redux-axios-middleware@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/redux-axios-middleware/-/redux-axios-middleware-4.0.1.tgz#e7eaaaae58d169b294aae4ef2428d03439f729cc"
   integrity sha512-bQGt75GYNl2VvEtsYE1Hcw8ua869RkUC7W98IJwiQKpyFMs416wqvMV1PBfyTbV83aRzIJzaYytcdcPi+8Bbrg==
+
+redux-thunk@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
+  integrity sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw==
 
 redux@^4.0.4:
   version "4.0.4"
